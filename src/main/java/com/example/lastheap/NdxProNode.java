@@ -1,24 +1,25 @@
 package com.example.lastheap;
 
-public class HeapNode<T> {
+public class NdxProNode<T> {
+
     private ProductNdxpro element;
 
-    private HeapNode<T> left;
+    private NdxProNode<T> left;
 
-    private HeapNode<T> right;
+    private NdxProNode<T> right;
 
 
-    public HeapNode(ProductNdxpro element, HeapNode<T> left, HeapNode<T> right) {
+    public NdxProNode(ProductNdxpro element, NdxProNode<T> left, NdxProNode<T> right) {
         this.element = element;
         this.left = left;
         this.right = right;
     }
 
-    public void setLeft(HeapNode<T> left){
+    public void setLeft(NdxProNode<T> left){
         this.left = left;
     }
 
-    public void setRight(HeapNode<T> right){
+    public void setRight(NdxProNode<T> right){
         this.right = right;
     }
 
@@ -30,11 +31,11 @@ public class HeapNode<T> {
         return element;
     }
 
-    public HeapNode<T> getLeft() {
+    public NdxProNode<T> getLeft() {
         return left;
     }
 
-    public HeapNode<T> getRight() {
+    public NdxProNode<T> getRight() {
         return right;
     }
 

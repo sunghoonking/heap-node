@@ -17,6 +17,13 @@ public class Node  {
         this.right = right;
     }
 
+    public Node(int data) {
+        this.setValue(data);
+        setLeft(null);
+        setRight(null);
+
+    }
+
     @Override
     public String toString() {
         return "Node{" +

@@ -95,7 +95,7 @@ public class BubbleSort {
 
     private static int getSize(LinkedListNode rootNode) {
 
-        int a = 1;    // asdad
+        int a = 1;    // asdadㅁㄴㅇㅁㄴㅇㅁㄴㅇ
 
         LinkedListNode temp = rootNode;
 

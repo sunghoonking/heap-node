@@ -71,12 +71,26 @@ public class BubbleSort {
 
     private static void swap(LinkedListNode rootNode) {
 
-        LinkedListNode temp = rootNode;
+        LinkedListNode first = rootNode;         // 5   == rootNode
 
-        rootNode.setRight(rootNode.right);
+        LinkedListNode second = first.right;     // 3   == rootNode.right
 
-        rootNode.right = temp;
+        LinkedListNode third = second.right;     // 2   == rootNode.right.right
 
+        rootNode = rootNode.right;         // 5의 위치에 3이 들어감
+
+        rootNode.right = first;
+
+        fis
+
+
+
+
+
+//        rootNode.right = first;            // 기존에 3은 루트 노드 위치에
+//
+//        rootNode.right.right = second;
+//
     }
 
     private static int getSize(LinkedListNode rootNode) {

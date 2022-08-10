@@ -89,7 +89,7 @@ public class BubbleSort {
 
 //        rootNode.right = first;            // 기존에 3은 루트 노드 위치에
 //
-//        rootNode.right.right = secon
+//        rootNode.right.right = seconㅁㅁ
 //
     }
 

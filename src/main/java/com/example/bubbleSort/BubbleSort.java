@@ -81,7 +81,7 @@ public class BubbleSort {
 
         rootNode.right = first;
 
-        fis
+
 
 
 
@@ -121,7 +121,7 @@ public class BubbleSort {
     }
 
 //    public static void bubbleSort(LinkedList<LinkedListNode> integers){
-//
+//    aaaaa
 //        for (int j = 0; j < integers.size(); j++) {
 //            for (int i = 0; i < integers.size()-1; i++) {
 //                if (integers.get(i).value > integers.get(i+1).value){

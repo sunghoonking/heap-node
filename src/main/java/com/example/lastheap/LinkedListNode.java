@@ -101,23 +101,23 @@ public class LinkedListNode {
 
     }
 
-    public static void bubbleSort(LinkedList<LinkedListNode> integers){
+//    public static void bubbleSort(LinkedList<LinkedListNode> integers){
+//
+//        for (int j = 0; j < integers.size(); j++) {
+//            for (int i = 0; i < integers.size()-1; i++) {
+//                if (integers.get(i).value > integers.get(i+1).value){
+//                    swap(integers,i,i+1);
+//                }
+//            }
+//        }
+//    }
 
-        for (int j = 0; j < integers.size(); j++) {
-            for (int i = 0; i < integers.size()-1; i++) {
-                if (integers.get(i).value > integers.get(i+1).value){
-                    swap(integers,i,i+1);
-                }
-            }
-        }
-    }
-
-    public static void swap(LinkedList<LinkedListNode> integers, int a, int b){
-
-        int value1 = integers.get(a).value;
-        integers.get(a).value = integers.get(b).value;
-        integers.get(b).value = value1;
-
-    }
+//    public static void swap(LinkedList<LinkedListNode> integers, int a, int b){
+//
+//        int value1 = integers.get(a).value;
+//        integers.get(a).value = integers.get(b).value;
+//        integers.get(b).value = value1;
+//
+//    }
 
 }

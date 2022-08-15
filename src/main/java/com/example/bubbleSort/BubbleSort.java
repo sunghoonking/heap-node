@@ -9,22 +9,26 @@ public class BubbleSort {
 
         LinkedListNode rootNode = new LinkedListNode(5);
 
+        addList(rootNode, 4);
         addList(rootNode, 3);
-        addList(rootNode, 5);
-//        addList(rootNode, 6);
+//        addList(rootNode, 2);
 //        addList(rootNode, 7);
 //        addList(rootNode, 1);
-//        addList(rootNode, 4);
+//        addList(rootNode, 4);®
 
         bubble(rootNode);
-
-        List<Integer> integers = easyPrint(rootNode);
-
-        System.out.println(integers);
-
+//
         System.out.println(rootNode);
-        System.out.println(rootNode.right);
-        System.out.println(rootNode.right.right);
+//        System.out.println(rootNode.right);
+//        System.out.println(rootNode.right.right);
+
+//        List<Integer> integers = easyPrint(rootNode);
+
+//        System.out.println(integers);
+
+//        System.out.println(rootNode);
+//        System.out.println(rootNode.right);
+//        System.out.println(rootNode.right.right);
 //        System.out.println(rootNode.right.right.right);
 //        System.out.println(rootNode.right.right.right.right);
 //        System.out.println(rootNode.right.right.right.right.right);
@@ -60,37 +64,99 @@ public class BubbleSort {
 
         for (int i = 0; i < size; i++) {
             for (int j = size; j != 0; j--) {
-                if (temp.value > temp.right.value) {
+                if (temp.right != null && temp.value > temp.right.value) {
                     swap(temp);
                     temp = temp.right;
                 }
                 size--;
             }
+
         }
+
+
+        //7
+//        for (int i = 0; i < size; i++) {
+//            temp = rootNode;
+//            while (temp.right != null) {
+//                if (temp.value > temp.right.value) {
+//                    swap(temp);
+//                    temp = temp.right;
+//                } else if (temp.value < temp.right.value) {
+//                    temp = temp.right;
+//                } else {
+//                    temp = temp.right;
+//                }
+//            }
+//        }
+
     }
+//        for (int i = 0; i < size; i++) {
+//            if (temp.right == null){
+//                break;
+//            } else if (temp.value > temp.right.value){
+//                swap(temp);
+//                temp = temp.right;
+//            }
+//        }
 
     private static void swap(LinkedListNode rootNode) {
-
-        LinkedListNode first = rootNode;         // 5   == rootNode
-
-        LinkedListNode second = first.right;     // 3   == rootNode.right
-
-        LinkedListNode third = second.right;     // 2   == rootNode.right.right
-
-        rootNode = rootNode.right;         // 5의 위치에 3이 들어감
-
-        rootNode.right = first;
-
-
-
-
-
-
-
-//        rootNode.right = first;            // 기존에 3은 루트 노드 위치에
+////
+//        LinkedListNode root = rootNode;         // 5   == rootNode
 //
-//        rootNode.right.right = seconㅁㅁ
+//        LinkedListNode first = root.right;     //  3   == rootNode.right
 //
+//        LinkedListNode second = first.right;     // null   == rootNode.right.right
+//
+//        rootNode = rootNode.right;   //  3 null
+//
+//        rootNode.right = root;       // 3 5 3
+//
+//        rootNode.right.right = second; // 3 5 null
+
+        int temp = rootNode.value;
+
+        rootNode.value = rootNode.right.value;
+
+        rootNode.right.value = temp;
+
+
+//        System.out.println(rootNode);
+//        System.out.println(rootNode.right);
+//        System.out.println(rootNode.right.right)
+//        System.out.println(rootNode.right);
+//        rootNode.right = second;
+//
+//        rootNode.left = first;
+//
+//        first.right = root;
+
+//
+//
+//        System.out.println(rootNode.left);
+//        System.out.println(rootNode);
+//        System.out.println(rootNode.right);
+
+
+//        int temp = rootNode.value;
+//
+//        rootNode.value = rootNode.right.value;
+//
+//        rootNode.right.value = temp;
+//
+//        System.out.println(rootNode);
+
+//        System.out.println(rootNode.left);
+
+//        rootNode.left = first;
+//
+//        first.left = null;
+//
+//        first.right = root;
+//
+//        second.left = rootNode;
+
+
+
     }
 
     private static int getSize(LinkedListNode rootNode) {

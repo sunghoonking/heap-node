@@ -66,6 +66,7 @@ public class BubbleSort {
 
         LinkedListNode demoTemp = rootNode;
         LinkedListNode temp = rootNode;
+//        LinkedListNode temp = rootNode;
 
 
         for (int i = 0; i < size; i++) {      // 3번을 돌아요

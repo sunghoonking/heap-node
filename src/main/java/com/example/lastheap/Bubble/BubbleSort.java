@@ -70,7 +70,7 @@ public class BubbleSort {
 
 
         for (int i = 0; i < size; i++) {      // 3번을 돌아요
-
+  
             for (int j = size; j != 0; j--) {  // 3번을 역순으로
 
                 if (temp.right != null && temp.value > temp.right.value) {

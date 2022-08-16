@@ -1,7 +1,5 @@
 package com.example.lastheap.Bubble;
 
-import com.example.lastheap.Bubble.LinkedListNode;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,8 +16,11 @@ public class BubbleSort {
 //        addList(rootNode, 1);
 //        addList(rootNode, 4);®
 
+
+//        traverse(rootNode);
         bubble(rootNode);
         System.out.println(rootNode);
+
 //        System.out.println(rootNode.right);
 //        System.out.println(rootNode.right.right);
 
@@ -61,68 +62,97 @@ public class BubbleSort {
     private static void bubble(LinkedListNode rootNode) {
         // 이제 노드들을 비교해서 정렬
         int size = getSize(rootNode);    // 3
-        LinkedListNode temp = rootNode;  // 빈 주소 노드   5 4 3
+        // 빈 주소 노드   5 4 3
 
-//        for (int i = 0; i < size; i++) {
-//            if (temp.value > temp.right.value){
-//                swap(temp);
-//            }
-//        }
-////
-//
+        LinkedListNode demoTemp = rootNode;
+        LinkedListNode temp = rootNode;
+
+
         for (int i = 0; i < size; i++) {      // 3번을 돌아요
+
             for (int j = size; j != 0; j--) {  // 3번을 역순으로
+
                 if (temp.right != null && temp.value > temp.right.value) {
-                    swap(temp);
-                    System.out.println(temp.value);
-//                     temp = temp.right;
+
+                    LinkedListNode root = swap(temp);// 4 5 3
+
+                    if (root != temp) {
+                        temp = root.right;
+                    }
                 }
                 size--;
             }
         }
-
-
-        //7
-//        for (int i = 0; i < size; i++) {
-//            temp = rootNode;
-//            while (temp.right != null) {
-//                if (temp.value > temp.right.value) {
-//                    swap(temp);
-//                    temp = temp.right;
-//                } else if (temp.value < temp.right.value) {
-//                    temp = temp.right;
-//                } else {
-//                    temp = temp.right;
-//                }
-//            }
-//        }
-
     }
-//        for (int i = 0; i < size; i++) {
-//            if (temp.right == null){
-//                break;
-//            } else if (temp.value > temp.right.value){
+
+    //7
+//        for(int i = 0; i<size;i++) {
+//        temp = rootNode;
+//        while (temp.right != null) {
+//            if (temp.value > temp.right.value) {
 //                swap(temp);
+//                temp = temp.right;
+//            } else if (temp.value < temp.right.value) {
+//                temp = temp.right;
+//            } else {
 //                temp = temp.right;
 //            }
 //        }
+//    }
+//
+//}
 
-    private static void swap(LinkedListNode rootNode) {
+
+//        for (int i = 0; i < size; i++) {
+//            if (temp.right != null  && temp.value > temp.right.value){
+//                LinkedListNode root = swap(temp);
+//
+//                if (root != temp){
+//                    temp = root.right;
+//                }
+//            }
+//
+//        }
+
+    private static void traverse(LinkedListNode rootNode) {
+
+        int size = getSize(rootNode);
+
+        for (int i = 0; i < size; i++) {
+            System.out.println(rootNode.value);
+            rootNode = rootNode.right;
+        }
+    }
+
+    private static LinkedListNode swap(LinkedListNode rootNode) {
+
 
         LinkedListNode root = rootNode;          // 5   == rootNode
 
-        LinkedListNode first = root.right;       // 3   == rootNode.right
+        LinkedListNode first = root.right;       // 4   == rootNode.right
 
-        LinkedListNode second = first.right;     // null   == rootNode.right.right
+        LinkedListNode second = first.right;     // 3   == rootNode.right.right
 
         // 4 5 3
         // 4 3 5
         // 3 4 5
-        rootNode = rootNode.right;
+        rootNode = rootNode.right;  // 4 3 3
 
-        rootNode.right = root;
+        rootNode.right = root;   // 4 5 3
 
-        rootNode.right.right  = second;
+        rootNode.right.right = second;
+
+
+//        System.out.println(rootNode + "~~~~~~~~~~~~~~rootNode~~~~~~~~~~~~~~");
+//        System.out.println(rootNode.right + "~~~~~~~~~~~~~~rootNode.right~~~~~~~~~~~~~~");
+//        System.out.println(rootNode.right.right + "~~~~~~~~~~~~~~rootNode.right.right~~~~~~~~~~~~~~");
+
+
+        return rootNode;
+
+//        System.out.println(rootNode);               //  4
+//        System.out.println(rootNode.right);          // 5
+//        System.out.println(rootNode.right.right);    // 3
 
 //        System.out.println(rootNode.value);
 //        System.out.println(rootNode.right.value);
@@ -147,14 +177,9 @@ public class BubbleSort {
 //        rootNode.right.value = temp;  // 5
 
 
-
 //        rootNode.right = root;       // 3 5 3
 //
 //        rootNode.right.right = second; // 3 5 null
-
-
-
-
 
 
 //        int temp = rootNode.value;
@@ -179,7 +204,6 @@ public class BubbleSort {
 //        System.out.println(rootNode.left);
 //        System.out.println(rootNode);
 //        System.out.println(rootNode.right);
-
 
 
     }

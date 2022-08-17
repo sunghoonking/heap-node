@@ -64,56 +64,46 @@ public class BubbleSort {
         int size = getSize(rootNode);    // 3
         // 빈 주소 노드   5 4 3
 
-        LinkedListNode demoTemp = rootNode;
+        LinkedListNode head = rootNode;
         LinkedListNode temp = rootNode;
-//        LinkedListNode temp = rootNode;
+
+        for (int i = 0; i < size; i++) {  // 3번을 돌아요
 
 
-        for (int i = 0; i < size; i++) {      // 3번을 돌아요
-  
             for (int j = size; j != 0; j--) {  // 3번을 역순으로
 
                 if (temp.right != null && temp.value > temp.right.value) {
 
-                    LinkedListNode root = swap(temp);// 4 5 3
+                    LinkedListNode root = temp;
 
-                    if (root != temp) {
-                        temp = root.right;
+                    LinkedListNode first = root.right;
+
+                    LinkedListNode second = first.right;
+
+                    temp = temp.right;    // 4
+
+                    temp.right = root;    // 5
+
+                    temp.right.right = second;  // 3
+
+                    temp.right.left = temp;  // 5.left = 4
+
+                    if (head != temp.right.left) {
+
+                        head = temp;
+
                     }
+
+                    temp = temp.right;
+
+                    head = temp.right.left;
+//                    LinkedListNode tempRoot = root;  // 4
                 }
                 size--;
             }
         }
     }
 
-    //7
-//        for(int i = 0; i<size;i++) {
-//        temp = rootNode;
-//        while (temp.right != null) {
-//            if (temp.value > temp.right.value) {
-//                swap(temp);
-//                temp = temp.right;
-//            } else if (temp.value < temp.right.value) {
-//                temp = temp.right;
-//            } else {
-//                temp = temp.right;
-//            }
-//        }
-//    }
-//
-//}
-
-
-//        for (int i = 0; i < size; i++) {
-//            if (temp.right != null  && temp.value > temp.right.value){
-//                LinkedListNode root = swap(temp);
-//
-//                if (root != temp){
-//                    temp = root.right;
-//                }
-//            }
-//
-//        }
 
     private static void traverse(LinkedListNode rootNode) {
 
@@ -127,7 +117,7 @@ public class BubbleSort {
 
     private static LinkedListNode swap(LinkedListNode rootNode) {
 
-
+//                    LinkedListNode root = swap(temp);
         LinkedListNode root = rootNode;          // 5   == rootNode
 
         LinkedListNode first = root.right;       // 4   == rootNode.right
@@ -142,6 +132,8 @@ public class BubbleSort {
         rootNode.right = root;   // 4 5 3
 
         rootNode.right.right = second;
+
+//        rootNode.right.left = rootNode;
 
 
 //        System.out.println(rootNode + "~~~~~~~~~~~~~~rootNode~~~~~~~~~~~~~~");

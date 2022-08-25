@@ -182,11 +182,7 @@ public class BubbleSort {
 //        rootNode.right.value = temp;
 
 
-//        System.out.println(rootNode);
-//        System.out.println(rootNode.right);
-//        System.out.println(rootNode.right.right)
-//        System.out.println(rootNode.right);
-//        rootNode.right = second;
+
 //
 //        rootNode.left = first;
 //
